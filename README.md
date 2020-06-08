@@ -12,6 +12,14 @@ This project was to make an interactive way to practice your alphabet in sign la
 
 ![ASL Example 4](Images/Pic4.png)
 
+### Using the GUI
+
+After you have installed all of the dependencies you can use the GUI by typing the following code into your terminal.  
+
+```python
+python3 botton_gui_V3.py
+```
+
 ### Implementation details
 
 The YOLO object detection was pre-trained and can be found at "https://github.com/cansik/yolo-hand-detection"
