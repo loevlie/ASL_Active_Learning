@@ -14,7 +14,7 @@ This project was to make an interactive way to practice your alphabet in sign la
 
 ### Using the GUI
 
-After you have installed all of the dependencies you can use the GUI by typing the following code into your terminal.  
+First thing you need to do is change absolute paths in the botton_gui_V3.py script to the correct ones for your computer.  Next please see the folder "Models" in the "yolo-hand-detection" folder and download the "download_models.sh" file.  After that and after you have installed all of the dependencies you can use the GUI by typing the following code into your terminal.  
 
 ```python
 python3 botton_gui_V3.py
