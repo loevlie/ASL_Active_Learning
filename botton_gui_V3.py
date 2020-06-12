@@ -55,7 +55,6 @@ def press():
         alph_dict.update({i:n})
     
     camera=cv2.VideoCapture(0)
-    #cv2.namedWindow("test")
     img_counter = 0
     List_alph = [i for i in alph]
     if tkvar.get()=='Random':
@@ -92,19 +91,15 @@ def press():
                 cx = x + (w / 2)
                 cy = y + (h / 2)
                 crop_img = frame[y-50:y+h+50, x-50:x+w+50]
-                #cv2.waitKey(0)
                 im = Image.fromarray(crop_img)
                 im.save("your_file.png")
                 im = cv2.imread('your_file.png',0)
                 new_img = cv2.resize(im,(28,28))
- #               cv2.imshow("preview",new_img)
-                #cv2.waitKey(0)
                 the_class = new_model.predict_classes(new_img.reshape(1,28,28,1))
                 Answer = alph_dict[the_class[0]]
                 # draw a bounding box rectangle and label on the image
                 color = (0, 255, 255)
-                
-                #text = "%s (%s)" % (name, round(confidence, 2))
+
                 if Answer == letter:
                     cv2.rectangle(frame, (x, y), (x + w, y + h), (0,255,0), 2)
                     text = 'Correct Answer for: ' + Answer
@@ -117,19 +112,10 @@ def press():
                         0.5, (0,0,255), 2)
                     
             cv2.imshow("preview", frame)
-#            if Answer==tkvar:
-#                cv2.putText(frame, "Worked well", (x, y), cv2.FONT_HERSHEY_SIMPLEX,
-#                            0.5, color, 2)
-#            else:
-#                cv2.putText(frame, "Try again", (x, y), cv2.FONT_HERSHEY_SIMPLEX,
-#                            0.5, color, 2)
+
     camera.release()
     
     cv2.destroyAllWindows()
-    #print(Answer)
-    
-#w = Label(root, text="You can contribute at").grid(row = 4, column = 0)
-#t=HTMLLabel(root, html='<a href="https://childrenwithhearingloss.org/"> NGO </a>',font=("Courier", 1)).grid(row=5,column=0)
 
 w = Label(root, text="Learn Sign Language",font=('bold')).grid(row = 8, column = 0)
 t=HTMLLabel(root, html='<a href="https://www.youtube.com/watch?v=Raa0vBXA8OQ"> Tutorial </a>',font=("Courier", 1)).grid(row=9,column=0)
