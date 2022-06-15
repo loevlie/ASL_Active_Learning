@@ -22,7 +22,7 @@ python3 botton_gui_V3.py
 
 ### Implementation details
 
-The YOLO object detection was pre-trained and can be found at "https://github.com/cansik/yolo-hand-detection"
+The YOLO object detection was pre-trained and can be found at "https://github.com/cansik/yolo-hand-detection".  Currently that is not working so a new hand detection model will need to be found and implemented into the code.  
 
 A CNN was trained on a dataset obtained from Kaggle to predict what letter a hand was signing.  The YOLO hand detection was used to draw a box around the users hand so it could be cropped for the image analysis using the Tensorflow CNN model trained on the large Kaggle dataset.  
 
